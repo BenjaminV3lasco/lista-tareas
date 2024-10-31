@@ -1,133 +1,262 @@
 /* styles-Home.css */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Alinea al principio de la página */
-  padding:0px;
+/* Variables globales */
+:root {
+  --primary-color: #333;
+  --secondary-color: #fff;
+  --font-family: 'Arial', sans-serif;
+  --spacing: 20px;
+  --max-width: 1200px;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   min-height: 100vh;
 }
 
+/* Header */
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  position: relative;
-  height: 60px;
-  width: 100%;
+  padding: var(--spacing);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.menu-btn {
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+  stroke: rgb(255, 255, 255);
+}
+
+.login-button {
   background: none;
   border: none;
-  color: white;
-  font-size: 24px;
+  color: var(--secondary-color);
   cursor: pointer;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-  text-align: center;
-  width: 100%;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #444;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  display: block;
-  text-align: right;
-}
-
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar nav ul li {
-  margin: 15px 0;
-}
-
-.sidebar nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.sidebar nav ul li a:hover {
   text-decoration: underline;
 }
 
-.home-text {
-  font-size: 28px;
-  color: #333;
-  text-align: center;
-  margin-top: 10px;
+
+/* Menú desplegable */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #222;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries for Responsiveness */
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar-nav {
+  padding: 20px;
+  padding-top: 60px;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 15px;
+}
+
+.sidebar-menu button {
+  width: 100%;
+  padding: 12px 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 6px;
+}
+
+.sidebar-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+/* Overlay para cuando el menú está abierto */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Contenedor principal y tarjetas */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing);
+  margin-bottom: 60px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;  /* Cambio a dirección horizontal */
+  gap: 60px;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+  justify-content: center;  /* Centra las tarjetas horizontalmente */
+}
+
+.card {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  padding: var(--spacing);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex: 1;  /* Hace que cada tarjeta tome el mismo espacio */
+  max-width: 350px;  /* Ancho máximo para cada tarjeta */
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--spacing);
+  font-size: 12px;
+  color: #888;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cards-container {
+    padding: calc(var(--spacing) / 2);
+  }
+  
+  .card {
+    
+    max-width: 300px;
+  }
+}
+
 @media (max-width: 768px) {
+  .cards-container {
+    margin-top: 22%;
+    flex-direction: column;  /* Cambia a dirección vertical */
+    align-items: center;     /* Centra las tarjetas */
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 500px;       /* Ancho máximo más grande para vista móvil */
+  }
+  
   .header {
-    padding: 10px;
+    padding: calc(var(--spacing) / 2);
   }
-
-  .menu-btn {
+  
+  .logo {
     font-size: 20px;
-  }
-
-  .header h1 {
-    font-size: 20px;
-  }
-
-  .home-text {
-    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .header h1 {
+  :root {
+    --spacing: 15px;
+  }
+  
+  .card h2 {
     font-size: 18px;
   }
-
-  .menu-btn {
-    font-size: 18px;
+  
+  .card p {
+    font-size: 13px;
   }
-
-  .home-text {
-    font-size: 20px;
-  }
-
-  .sidebar {
-    width: 180px;
-  }
-
-  .sidebar nav ul li a {
-    font-size: 14px;
+  
+  .card {
+    max-width: 100%;  /* En móviles pequeños, usa todo el ancho disponible */
   }
 }

@@ -5,12 +5,15 @@ import './index.css'
 import router from './routes/Router.jsx'
 import {RouterProvider} from "react-router-dom"
 import { token } from './TOKEN.JS'
+import { AuthProvider } from './auth/AuthProvider.jsx'
 
 localStorage.setItem("token", token)
 
   createRoot(document.getElementById('root')).render(
     <StrictMode>
-      <RouterProvider router={router}>
-      </RouterProvider>
+      <AuthProvider>
+        <RouterProvider router={router}>
+        </RouterProvider>
+      </AuthProvider>
     </StrictMode>,
 )

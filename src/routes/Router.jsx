@@ -1,71 +1,48 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import {Projects} from "../pages/Projects";
+import { Projects } from "../pages/Projects";
 import Stories from "../pages/Stories";
 import Settings from "../pages/Settings";
 import { ProjectsDetails } from "../pages/ProjectsDetails";
 import { EpicsDetails } from "../pages/EpicsDetails";
 import { StoriesDetails } from "../pages/StoriesDetails";
+import Login from "../pages/Login";
+import ProtectedRoute from "../pages/ProtectedRoute"; // Importa el componente ProtectedRoute
 
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element:(
-                <Home></Home>
-            )
-        },
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />
+    },
+    {
+        path: "/login",
+        element: <Login />
+    },
+    {
+        element: <ProtectedRoute />, // Agrupa las rutas protegidas aquí
+        children: [
+            {
+                path: "/my-projects",
+                element: <Projects />
+            },
+            {
+                path: "/my-projects/:projectId",
+                element: <ProjectsDetails />
+            },
+            {
+                path: "/my-projects/:projectId/:epicId",
+                element: <EpicsDetails />
+            },
+            {
+                path: "/my-projects/:projectId/:epicId/:storyId",
+                element: <StoriesDetails />
+            },
+            {
+                path: "/settings",
+                element: <Settings />
+            }
+        ]
+    }
+]);
 
-        {
-            path: "/my-projects",
-            element:(
-                <Projects></Projects>
-            )
-
-        },
-
-        {
-            path: "/my-projects/:projectId", 
-            element:(
-                <ProjectsDetails></ProjectsDetails>
-            )
-        },
-        {
-            path: "/my-projects/:projectId/:epicId",
-            element:(
-                <EpicsDetails></EpicsDetails>
-            )
-        },
-
-        {
-            path:"/my-projects/:projectId/:epicId/:storyId",
-            element:(
-                <StoriesDetails></StoriesDetails>
-            )
-        },
-
-        {
-            path:"/settings",
-            element:(
-                <Settings></Settings>
-            )
-        }
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ])
-
-
-    export default router;
+export default router;

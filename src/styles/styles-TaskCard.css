@@ -1,0 +1,114 @@
+/* styles-TaskCard.css */
+.project-tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .task-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .task-item {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: var(--spacing);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .task-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .task-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .task-status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .task-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .task-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+  }
+  
+  .loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Estados de tarea */
+  .task-status[data-status="completed"] {
+    background-color: #28a745;
+  }
+  
+  .task-status[data-status="in-progress"] {
+    background-color: #007bff;
+  }
+  
+  .task-status[data-status="pending"] {
+    background-color: #ffc107;
+  }
+  
+  .task-status[data-status="blocked"] {
+    background-color: #dc3545;
+  }
+  
+  @media (max-width: 768px) {
+    .project-tasks {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      padding: 15px;
+    }
+  
+    .task-title {
+      font-size: 1.1rem;
+    }
+  
+    .task-description {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-tasks {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+  }
