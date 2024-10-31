@@ -64,6 +64,16 @@ export const ProjectsDetails = () => {
                 My Projects
               </button>
             </li>
+
+            <li>
+              <button onClick={() => {
+                navigate('/my-projects/:projectId/:epicId/:storyId');
+                toggleMenu();
+              }}>
+                My Stories
+              </button>
+            </li>
+            
             <li>
               <button onClick={() => {
                 navigate('/settings');

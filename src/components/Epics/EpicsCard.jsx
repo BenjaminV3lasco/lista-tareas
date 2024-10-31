@@ -27,7 +27,7 @@ const EpicsCard = ({ proyecto }) => {
       </div>
     );
   }
-
+  
   return (
     <div className="epics-container">
       <h2 className="epics-title">Épicas del Proyecto</h2>
