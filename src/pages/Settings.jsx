@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/styles-Settings.css';
-import { useAuth } from '../auth/AuthProvider';
+
 
 const Settings = () => {
   const navigate = useNavigate();
@@ -11,8 +11,6 @@ const Settings = () => {
     navigate('/');
   };
 
-  const {logout, user} = useAuth();
-
   return (
     <div className="settings-container">
       <div className="settings-card">
@@ -20,7 +18,6 @@ const Settings = () => {
         
         <div className="settings-section">
           <h2 className="settings-section-title">Cuenta</h2>
-          <p>Nombre: {user.username}</p>
           <div className="settings-button-container">
             <button
               className="edit-button"
