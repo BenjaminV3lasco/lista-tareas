@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthProvider"; // Asegúrate de que el path sea correcto
+import { useAuth } from "../auth/AuthProvider";
 
 const ProtectedRoute = () => {
-    const { isAuthenticated } = useAuth(); // Suponiendo que tu contexto de autenticación tenga este estado
+    const { isAuthenticated } = useAuth();
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/" />; // Redirige a Home si no está autenticado
+    return isAuthenticated ? <Outlet /> : <Navigate to="/" replace />;
 };
 
 export default ProtectedRoute;

@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: <Login />
     },
     {
-        element: <ProtectedRoute />, // Agrupa las rutas protegidas aquí
+        element: <ProtectedRoute />, // Agrupa las rutas protegidas
         children: [
             {
                 path: "/my-projects",

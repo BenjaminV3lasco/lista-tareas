@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { getEpicsId } from '../hooks/fetchEpicsId';
 import StoryCard from '../components/Stories/StoryCard';
 import '../styles/styles-EpicsDetails.css'
+import Sidebar from '../components/NavBar/SideBar';
+
 
 export const EpicsDetails = () => {
   const navigate = useNavigate();
@@ -11,7 +13,11 @@ export const EpicsDetails = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Estado para controlar la visibilidad del menú desplegable
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const handleBack = () => {
     navigate(-1);
@@ -21,10 +27,7 @@ export const EpicsDetails = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
+  
   return (
     <div className="epics-container">
       <header className="epics-header">
@@ -43,56 +46,8 @@ export const EpicsDetails = () => {
       </header>
 
       {/* Menú Desplegable */}
-      <aside className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
-        <button className="close-button" onClick={toggleSidebar}>
-          ✕
-        </button>
-        <nav className="sidebar-nav">
-          <ul className="sidebar-menu">
-            <li>
-              <button onClick={() => {
-                navigate('/my-projects');
-                toggleMenu();
-              }}>
-                My Projects
-              </button>
-            </li>
-            <li>
-              <button onClick={() => {
-                navigate('/my-projects/:projectId/:epicId/:storyId');
-                toggleMenu();
-              }}>
-                My Stories
-              </button>
-            </li>
-            <li>
-            <button onClick={() => {
-                navigate('/settings');
-                toggleMenu();
-              }}>
-                Settings
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <div className={`sidebar ${isMenuOpen ? 'active' : ''}`}>
-        <nav className="sidebar-nav">
-          <button className="close-button" onClick={toggleMenu}>
-            <i className="fas fa-times"></i>
-          </button>
-          <ul className="sidebar-menu">
-            <li>
-              <button onClick={() => navigate('/')}>Inicio</button>
-            </li>
-            <li>
-              <button onClick={() => navigate('/my-projects')}>My Projects</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      
       <div 
         className={`overlay ${isMenuOpen ? 'active' : ''}`} 
         onClick={toggleMenu}

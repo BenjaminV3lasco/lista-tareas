@@ -19,6 +19,10 @@
     color: var(--secondary-color);
     min-height: 100vh;
   }
+
+  h3{
+    color: #333333;
+  }
   
   /* Header común */
   .header {
