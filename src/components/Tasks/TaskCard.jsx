@@ -62,10 +62,10 @@ export default function TaskCard() {
     e.preventDefault();
 
      // Validar longitud de descripción si está presente
-  if (taskData.description && taskData.description.length < 10) {
-    alert('La descripción debe tener al menos 10 caracteres');
-    return;
-  }
+      if (taskData.description && taskData.description.length < 10) {
+        alert('La descripción debe tener al menos 10 caracteres');
+      return;
+      }
 
     try {
       const response = await fetch(`${URL}/tasks`, {

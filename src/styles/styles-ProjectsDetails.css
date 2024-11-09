@@ -26,6 +26,7 @@ body {
   padding-top: calc(var(--spacing) * 3);
   min-height: 100vh;
   background-color: var(--primary-color);
+  
 }
 
 .project-details-content {
@@ -36,6 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  
 }
 
 /* Header */
@@ -178,6 +180,8 @@ body {
 .projects-item {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: var(--spacing);
   margin-bottom: 2rem;
@@ -186,17 +190,22 @@ body {
   gap: 1rem;
 }
 
+.projects-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 .project-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-description {
   font-size: 1rem;
   color: #666;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .project-status {

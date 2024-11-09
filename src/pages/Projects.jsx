@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { getProjects } from "../hooks/fetchProjects";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/styles-Projects.css";
 import Sidebar from "../components/NavBar/SideBar";
 
 export const Projects = () => {
-  const { data: proyectos, loading: cargando } = getProjects();
-  const navigate = useNavigate();
+  const { data: proyectos, loading: cargandoProyectos } = getProjects();
 
+  const navigate = useNavigate();
 
   // Estado para controlar la visibilidad del menú desplegable
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,6 +15,10 @@ export const Projects = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
 };
+
+  if (cargandoProyectos) {
+    return <div>Cargando Proyectos...</div>;
+  }
 
   return (
     <div>
@@ -46,7 +50,6 @@ export const Projects = () => {
               key={proyecto._id}
             >
               <h3>{proyecto.name}</h3>
-              <p>Miembros: </p>
             </Link>
           ))}
         </div>
