@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import { Projects } from "../pages/Projects";
-import Stories from "../pages/Stories";
 import Settings from "../pages/Settings";
 import { ProjectsDetails } from "../pages/ProjectsDetails";
 import { EpicsDetails } from "../pages/EpicsDetails";
 import { StoriesDetails } from "../pages/StoriesDetails";
 import Login from "../pages/Login";
 import ProtectedRoute from "../pages/ProtectedRoute"; // Importa el componente ProtectedRoute
+import AllStories from "../pages/AllStoriesPage";
+import AllStoriesPage from "../pages/AllStoriesPage";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path: "/my-projects/:projectId/:epicId/:storyId",
                 element: <StoriesDetails />
             },
+            {  path: "/my-stories", // Nueva ruta
+                element: <AllStoriesPage/>
+            },
+
             {
                 path: "/settings",
                 element: <Settings />

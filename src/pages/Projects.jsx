@@ -54,6 +54,9 @@ export const Projects = () => {
           ))}
         </div>
       </div>
+      {proyectos.length === 0 && (
+          <p>No hay proyectos disponibles.</p>
+        )}
     </div>
   );
 };

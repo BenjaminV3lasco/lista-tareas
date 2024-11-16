@@ -54,7 +54,9 @@ export const StoriesDetails = () => {
         </div>
 
         {/* Menú Desplegable */}
+
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        
       </header>
 
       <div className="stories-details-content">

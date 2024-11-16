@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
           <li>
             <button onClick={() => {
-              navigate('');
+              navigate('/my-stories'); // Actualizado para usar la nueva ruta
               toggleSidebar();
             }}>
               My Stories

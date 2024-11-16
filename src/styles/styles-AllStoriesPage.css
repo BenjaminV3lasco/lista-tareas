@@ -1,7 +1,7 @@
 @import './stylesBase.css';
 
 /* Container Principal */
-.projects-container {
+.p-6 {
     min-height: 100vh;
     background-color: var(--primary-color);
     padding-top: calc(var(--spacing) * 3);
@@ -35,24 +35,39 @@
     text-transform: uppercase;
 }
 
-/* Contenido principal */
-.projects-content {
+/* Botones de navegación */
+.menu-button,
+.back-button,
+.hamburger-menu {
+    background: transparent;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--secondary-color);
+}
+
+/* Grid de historias */
+.grid {
     width: 100%;
     max-width: 1200px;
     padding: 2rem;
     margin: 0 auto;
-}
-
-/* Grid de proyectos */
-.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    width: 100%;
 }
 
-/* Tarjetas de proyecto */
-.project-card {
+/* Tarjetas de historia */
+.border {
     background-color: var(--secondary-color);
     border-radius: 8px;
     padding: var(--spacing);
@@ -64,40 +79,16 @@
     gap: 1rem;
 }
 
-.project-card:hover {
+.border:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project-card h3 {
+.font-semibold {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-}
-
-.project-description {
-    color: var(--primary-color);
-    opacity: 0.8;
-}
-
-.project-meta {
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    opacity: 0.7;
-}
-
-/* Botones de navegación */
-.hamburger-menu {
-    background: transparent;
-    border: none;
-    color: var(--secondary-color);
-    cursor: pointer;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
 }
 
 /* Sidebar */
@@ -155,7 +146,7 @@
 
 /* Media Queries */
 @media (max-width: 1024px) {
-    .projects-grid {
+    .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -169,17 +160,17 @@
         font-size: 1.75rem;
     }
     
-    .projects-content {
+    .grid {
         padding: 1rem;
     }
     
-    .project-card h3 {
+    .font-semibold {
         font-size: 1.25rem;
     }
 }
 
 @media (max-width: 480px) {
-    .projects-grid {
+    .grid {
         grid-template-columns: 1fr;
     }
 
@@ -187,16 +178,16 @@
         --spacing: 15px;
     }
 
-    .projects-content {
+    .grid {
         padding: 1rem;
     }
     
-    .project-card {
+    .border {
         margin-top: 5%;
         padding: calc(var(--spacing) * 0.75);
     }
     
-    .project-card h3 {
+    .font-semibold {
         font-size: 1.2rem;
     }
 
