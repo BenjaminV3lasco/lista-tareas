@@ -79,7 +79,7 @@
     margin-bottom: 2rem;
     width: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .story-item:hover {
@@ -112,7 +112,7 @@
 }
 
 .tasks-title {
-    font-size: 2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color);
   margin-bottom: 2rem;
@@ -157,7 +157,9 @@
     :root {
         --spacing: 15px;
     }
-    
+    .story-main-title {
+        font-size: 0.7rem;
+    }
     .story-description {
         font-size: 0.9rem;
     }

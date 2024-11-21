@@ -188,7 +188,8 @@
     }
 
     .projects-content {
-        padding: 1rem;
+        padding: 3rem;
+        margin-top: 5%;
     }
     
     .project-card {
@@ -197,7 +198,7 @@
     }
     
     .project-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .logo {

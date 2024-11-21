@@ -6,7 +6,6 @@ import Sidebar from "../components/NavBar/SideBar";
 
 export const Projects = () => {
   const { data: proyectos, loading: cargandoProyectos } = getProjects();
-
   const navigate = useNavigate();
 
   // Estado para controlar la visibilidad del menú desplegable

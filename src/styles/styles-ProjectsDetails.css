@@ -26,7 +26,6 @@ body {
   padding-top: calc(var(--spacing) * 3);
   min-height: 100vh;
   background-color: var(--primary-color);
-  
 }
 
 .project-details-content {
@@ -196,7 +195,7 @@ body {
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 0.2rem;
@@ -259,6 +258,10 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+@import './stylesBase.css';
+
+/* ... (resto del CSS anterior igual hasta la parte responsive) ... */
+
 /* Responsive */
 @media (max-width: 768px) {
   .header {
@@ -267,11 +270,11 @@ body {
   
   .back-button,
   .hamburger-menu {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .project-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   
   .hamburger-line {
@@ -280,16 +283,31 @@ body {
 
   .project-details-content {
     padding: 1rem;
+    max-width: 95%;
+  }
+
+  .projects-item {
+    padding: var(--spacing);
+    margin-bottom: 1.8rem;
+  }
+
+  .project-status {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .sidebar {
+    width: 240px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --spacing: 15px;
+    --spacing: 14px;
   }
   
   .project-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .project-description {
@@ -298,7 +316,35 @@ body {
 
   .projects-item {
     background-color: var(--secondary-color);
-    margin-top: 5%;
+    margin-top: 7%;
+    padding: calc(var(--spacing) * 0.8);
+    margin-bottom: 1.2rem;
+    margin-left: 2.5%;
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .project-details-content {
+    padding: 0.8rem;
+    max-width: 92%;
+  }
+
+  .project-status {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar-menu button {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  
+  .header {
+    height: 9%;
   }
 }
 

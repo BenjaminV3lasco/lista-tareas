@@ -7,8 +7,7 @@ import { EpicsDetails } from "../pages/EpicsDetails";
 import { StoriesDetails } from "../pages/StoriesDetails";
 import Login from "../pages/Login";
 import ProtectedRoute from "../pages/ProtectedRoute"; // Importa el componente ProtectedRoute
-import AllStories from "../pages/AllStoriesPage";
-import AllStoriesPage from "../pages/AllStoriesPage";
+import Stories from "../pages/Stories";
 
 const router = createBrowserRouter([
     {
@@ -38,8 +37,8 @@ const router = createBrowserRouter([
                 path: "/my-projects/:projectId/:epicId/:storyId",
                 element: <StoriesDetails />
             },
-            {  path: "/my-stories", // Nueva ruta
-                element: <AllStoriesPage/>
+            {  path: "/my-stories",
+                element: <Stories/>
             },
 
             {
