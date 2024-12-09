@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider';
 import useAuthApi from '../hooks/fetchAuthApi';
 import LoginForm from '../components/Login/LoginForm';
-import "../styles/styles-Login.css";
+import "./styles/Login.css";
 
 const Login = () => {
   const navigate = useNavigate();

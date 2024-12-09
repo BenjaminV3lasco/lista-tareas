@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProjectsId } from "../hooks/fetchProjectsId";
 import EpicsCard from "../components/Epics/EpicsCard";
-import "../styles/styles-ProjectsDetails.css";
+import "./styles/ProjectsDetails.css";
 import { useGetUsers } from "../hooks/fetchUsers";
 import Sidebar from "../components/NavBar/SideBar";
 
@@ -23,34 +23,34 @@ export const ProjectsDetails = () => {
     navigate(-1);
   };
 
-  // Función auxiliar para debugear la estructura de los datos
-  const debugData = () => {
-    console.log('Proyecto:', proyecto);
-    console.log('Users:', users);
-    console.log('Members:', proyecto?.members);
-  };
+ // Función auxiliar para debugear la estructura de los datos
+ const debugData = () => {
+  console.log('Proyecto:', proyecto);
+  console.log('Users:', users);
+  console.log('Members:', proyecto?.members);
+};
 
-  // Function to get user names from member IDs
-  const getMemberNames = (memberIds) => {
-    if (!memberIds || !users || !Array.isArray(users)) return 'Sin miembros';
-    
-    // Para debugear
-    debugData();
-    
-    // Convertir a array si es un solo ID
-    const memberArray = Array.isArray(memberIds) ? memberIds : [memberIds];
-    
-    const memberNames = memberArray
-      .map(memberId => {
-        const user = users.find(user => user.id === memberId || user._id === memberId);
-        // Intentar diferentes propiedades comunes para el nombre
-        return user ? (user.username || user.name || user.fullName || user.email || 'Usuario sin nombre') : null;
-      })
-      .filter(name => name !== null)
-      .join(', ');
-    
-    return memberNames || 'Sin miembros';
-  };
+// Function to get user names from member IDs
+const getMemberNames = (memberIds) => {
+  if (!memberIds || !users || !Array.isArray(users)) return 'Sin miembros';
+  
+  // Para debugear
+  debugData();
+  
+  // Convertir a array si es un solo ID
+  const memberArray = Array.isArray(memberIds) ? memberIds : [memberIds];
+  
+  const memberNames = memberArray
+    .map(memberId => {
+      const user = users.find(user => user.id === memberId || user._id === memberId);
+      // Intentar diferentes propiedades comunes para el nombre
+      return user ? (user.username  || user.fullName || user.email || 'Usuario sin nombre') : null;
+    })
+    .filter(name => name !== null)
+    .join(', ');
+  
+  return memberNames || 'Sin miembros';
+};
  
 
   if (!proyecto) {
@@ -99,7 +99,7 @@ export const ProjectsDetails = () => {
                 <span className="epic-status">{proyecto?.status || 'En progreso'}</span>
               </div>
             </div>
-              <div className="project-epics">
+              <div>
                 <EpicsCard proyecto={proyecto} />
               </div>
           </div>

@@ -19,11 +19,9 @@ body {
   font-family: Arial, sans-serif; /* Ajusta la fuente si deseas */
 }
 
-@import './stylesBase.css';
-
 /* Contenedor principal */
 .project-details-container {
-  padding-top: calc(var(--spacing) * 3);
+  padding-top: calc(var(--spacing) * 4);
   min-height: 100vh;
   background-color: var(--primary-color);
 }
@@ -36,7 +34,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  
 }
 
 /* Header */
@@ -239,8 +236,10 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
+
+
 
 /* Loader */
 .loader {
@@ -257,10 +256,6 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-@import './stylesBase.css';
-
-/* ... (resto del CSS anterior igual hasta la parte responsive) ... */
 
 /* Responsive */
 @media (max-width: 768px) {

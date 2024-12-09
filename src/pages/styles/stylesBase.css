@@ -148,18 +148,6 @@
     padding: var(--spacing);
     transition: transform 0.2s ease;
   }
-
-  /* Footer */
-.footer {
-  text-align: center;
-  padding: var(--spacing);
-  font-size: 12px;
-  color: #9c9999;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: none;
-}
   
   /* Media queries base */
   @media (max-width: 768px) {

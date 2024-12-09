@@ -3,7 +3,7 @@ import { getTasks } from '../../hooks/fetchTasks';
 import { useParams } from "react-router-dom";
 import TaskItem from './TaskItem';
 import TaskModal from './TaskModal';
-import '../../styles/styles-TaskCard.css';
+import '../../pages/styles/TaskCard.css';
 import { URL } from '../../consts/consts';
 
 export default function TaskCard() {

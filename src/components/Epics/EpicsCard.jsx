@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from "react-router-dom";
 import { getEpics } from '../../hooks/fetchEpics';
-import "../../styles/styles-EpicsCard.css"
+import "../../pages/styles/EpicsCard.css";
 
 
 const EpicsCard = ({ proyecto }) => {

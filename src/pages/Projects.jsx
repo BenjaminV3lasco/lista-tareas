@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { getProjects } from "../hooks/fetchProjects";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/styles-Projects.css";
+import "./styles/Projects.css";
 import Sidebar from "../components/NavBar/SideBar";
 
 export const Projects = () => {

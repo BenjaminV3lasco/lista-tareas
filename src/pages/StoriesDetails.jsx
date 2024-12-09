@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getStoriesId } from "../hooks/fetchStoriesId";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import TaskCard from "../components/Tasks/TaskCard";
-import "../styles/styles-Stories.css";
+import "./styles/Stories.css";
 import Sidebar from "../components/NavBar/SideBar";
 
 export const StoriesDetails = () => {

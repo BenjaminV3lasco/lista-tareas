@@ -216,11 +216,13 @@ body {
 
 /* Footer */
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: var(--spacing);
   font-size: 13px;
   color: #888;
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: var(--primary-color);
