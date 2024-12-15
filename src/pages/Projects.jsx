@@ -1,19 +1,16 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { getProjects } from "../hooks/fetchProjects";
-import { Link, useNavigate } from "react-router-dom";
 import "./styles/Projects.css";
 import Sidebar from "../components/NavBar/SideBar";
+import ProjectsCard from "../components/Projects/ProjectsCard";
 
 export const Projects = () => {
   const { data: proyectos, loading: cargandoProyectos } = getProjects();
-  const navigate = useNavigate();
-
-  // Estado para controlar la visibilidad del menú desplegable
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-};
+  };
 
   if (cargandoProyectos) {
     return <div>Cargando Proyectos...</div>;
@@ -33,29 +30,11 @@ export const Projects = () => {
 
       {/* Menú Desplegable */}
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      
 
       {/* Contenido principal */}
       <div className="projects-content">
-        <div className="projects-header">
-          <h1></h1>
-        </div>
-        
-        <div className="projects-grid">
-          {proyectos && proyectos.map((proyecto) => (
-            <Link 
-              to={`/my-projects/${proyecto._id}`} 
-              className="project-card" 
-              key={proyecto._id}
-            >
-              <h3>{proyecto.name}</h3>
-            </Link>
-          ))}
-        </div>
+        <ProjectsCard proyectos={proyectos} />
       </div>
-      {proyectos.length === 0 && (
-          <p>No hay proyectos disponibles.</p>
-        )}
     </div>
   );
 };
