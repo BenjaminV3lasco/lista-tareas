@@ -1,5 +1,5 @@
 /* styles-TaskCard.css */
-
+@import './stylesBase.css';
 /* Título central */
 .tasks-title {
   font-size: 2rem;
@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-@import './stylesBase.css';
+
 
 /* Contenedor principal */
 .tasks-container {
@@ -127,23 +127,6 @@
 
 .task-button-delete:hover {
   background-color: #c82333;
-}
-
-/* Estados de tarea */
-.task-status[data-status="completed"] {
-  background-color: #28a745;
-}
-
-.task-status[data-status="in-progress"] {
-  background-color: #007bff;
-}
-
-.task-status[data-status="pending"] {
-  background-color: #ffc107;
-}
-
-.task-status[data-status="blocked"] {
-  background-color: #dc3545;
 }
 
 /* Loading state */
