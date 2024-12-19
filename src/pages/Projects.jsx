@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getProjects } from "../hooks/fetchProjects";
 import "./styles/Projects.css";
-import Sidebar from "../components/NavBar/SideBar";
+import Sidebar from "../components/NavBar/Sidebar";
 import ProjectsCard from "../components/Projects/ProjectsCard";
 
 export const Projects = () => {

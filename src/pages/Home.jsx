@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/styles-home.css';
-import Sidebar from '../components/NavBar/SideBar';
+import Sidebar from '../components/NavBar/Sidebar';
 
 const Home = () => {
   const navigate = useNavigate();

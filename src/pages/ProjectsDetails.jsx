@@ -6,7 +6,7 @@ import "./styles/ProjectsDetails.css";
 import ProjectDetailsCard  from "../components/Projects/ProjectsDetailsCard";
 import {useMemberNames} from "../hooks/fetchMembersName";
 import { useGetUsers } from "../hooks/fetchUsers";
-import Sidebar from "../components/NavBar/SideBar";
+import Sidebar from "../components/NavBar/Sidebar";
 
 export const ProjectsDetails = () => {
   const { projectId } = useParams();

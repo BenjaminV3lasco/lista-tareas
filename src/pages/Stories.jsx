@@ -2,7 +2,7 @@ import React from 'react';
 import { useAllStories } from '../hooks/fetchAllStories';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Sidebar from '../components/NavBar/SideBar';
+import Sidebar from '../components/NavBar/Sidebar';
 
 const Stories = () => {
   const { data: stories, loading, error } = useAllStories();

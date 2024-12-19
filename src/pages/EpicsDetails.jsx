@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { getEpicsId } from '../hooks/fetchEpicsId';
 import StoryCard from '../components/Stories/StoryCard';
 import './styles/EpicsDetails.css';
-import Sidebar from '../components/NavBar/SideBar';
+import Sidebar from '../components/NavBar/Sidebar';
 
 
 export const EpicsDetails = () => {
