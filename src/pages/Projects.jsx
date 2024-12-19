@@ -5,13 +5,18 @@ import Sidebar from "../components/NavBar/SideBar";
 import ProjectsCard from "../components/Projects/ProjectsCard";
 
 export const Projects = () => {
+  // Extraemos los datos y el estado de carga usando el hook getProjects
   const { data: proyectos, loading: cargandoProyectos } = getProjects();
+
+  // Estado local para controlar si la barra lateral está abierta o cerrada
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  // Función para alternar el estado de la barra lateral
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  // Muestra un mensaje de carga mientras se obtienen los proyectos
   if (cargandoProyectos) {
     return <div>Cargando Proyectos...</div>;
   }

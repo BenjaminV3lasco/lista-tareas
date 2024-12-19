@@ -6,7 +6,7 @@ import { ProjectsDetails } from "../pages/ProjectsDetails";
 import { EpicsDetails } from "../pages/EpicsDetails";
 import { StoriesDetails } from "../pages/StoriesDetails";
 import Login from "../pages/Login";
-import ProtectedRoute from "../pages/ProtectedRoute"; // Importa el componente ProtectedRoute
+import ProtectedRoute from "../pages/ProtectedRoute";
 import Stories from "../pages/Stories";
 
 const router = createBrowserRouter([
